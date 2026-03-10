@@ -5,34 +5,144 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>香港小型圍棋比賽｜開支計劃表</title>
   <style>
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f6f7fb;color:#1f2937;margin:0;padding:24px}
-    .wrap{max-width:900px;margin:0 auto;background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-    h1{margin-top:0}
-    table{width:100%;border-collapse:collapse;margin-top:12px}
-    th,td{border:1px solid #e5e7eb;padding:10px;text-align:left}
-    th{background:#f3f4f6}
-    .right{text-align:right}
+    :root{
+      --bg:#f3f5f9;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --head:#eef2ff;
+      --accent:#1d4ed8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      padding:16px;
+      line-height:1.5;
+    }
+    .wrap{
+      max-width:960px;
+      margin:0 auto;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:clamp(20px,4.5vw,32px);
+      line-height:1.25;
+    }
+    .sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .pill{
+      display:inline-block;
+      background:#eff6ff;
+      color:#1e40af;
+      border:1px solid #bfdbfe;
+      border-radius:999px;
+      padding:4px 10px;
+      font-size:12px;
+      margin-bottom:12px;
+    }
+    .table-wrap{
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:10px;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:680px;
+      background:#fff;
+    }
+    th,td{
+      padding:12px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      text-align:left;
+      font-size:14px;
+    }
+    th{background:var(--head);font-weight:700}
+    .right{text-align:right;white-space:nowrap}
+    tfoot th{background:#f8fafc}
+    .note{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Mobile card layout */
+    @media (max-width: 720px){
+      .wrap{padding:14px}
+      .table-wrap{border:none;overflow:visible}
+      table{min-width:0;border-collapse:separate;border-spacing:0 10px;background:transparent}
+      thead{display:none}
+      tbody tr, tfoot tr{
+        display:block;
+        background:#fff;
+        border:1px solid var(--line);
+        border-radius:10px;
+        padding:8px 10px;
+      }
+      tbody td, tfoot th{
+        display:block;
+        border:none;
+        padding:6px 0;
+        font-size:14px;
+      }
+      tbody td:nth-child(1)::before{content:"類別";display:block;color:var(--muted);font-size:12px}
+      tbody td:nth-child(2)::before{content:"預算（HKD）";display:block;color:var(--muted);font-size:12px}
+      tbody td:nth-child(3)::before{content:"說明";display:block;color:var(--muted);font-size:12px}
+      .right{text-align:left}
+      tfoot tr{border:1px solid #bfdbfe;background:#eff6ff}
+      tfoot th{font-size:15px}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>香港小型圍棋比賽開支計劃（3月中）</h1>
-    <p>總預算：<strong>HKD 100,000</strong>｜規模：80–120 人</p>
-    <table>
-      <thead><tr><th>類別</th><th class="right">預算（HKD）</th><th>說明</th></tr></thead>
-      <tbody>
-        <tr><td>場地</td><td class="right">24,000</td><td>會堂/禮堂 1.5 日 + 管理清潔</td></tr>
-        <tr><td>物流與器材</td><td class="right">12,000</td><td>棋盤棋子、計時鐘、搬運</td></tr>
-        <tr><td>工作人員</td><td class="right">16,000</td><td>裁判、賽務、場務、攝影</td></tr>
-        <tr><td>獎項與比賽金</td><td class="right">18,000</td><td>獎金、獎盃、證書</td></tr>
-        <tr><td>宣傳</td><td class="right">10,000</td><td>社媒推廣、海報、報名系統</td></tr>
-        <tr><td>保險與行政</td><td class="right">6,000</td><td>公眾責任保險及行政雜費</td></tr>
-        <tr><td>餐飲與補給</td><td class="right">6,000</td><td>工作人員餐飲、飲用水</td></tr>
-        <tr><td>預備金</td><td class="right">8,000</td><td>突發費用</td></tr>
-        <tr><th>總計</th><th class="right">100,000</th><th></th></tr>
-      </tbody>
-    </table>
-    <p>詳細拆分請看 README.md。</p>
+    <span class="pill">2026年3月中｜預算方案</span>
+    <h1>香港小型圍棋比賽開支計劃</h1>
+    <p class="sub">總預算：<strong>HKD 100,000</strong>｜建議規模：80–120 人</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>類別</th>
+            <th class="right">預算（HKD）</th>
+            <th>說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>場地</td><td class="right">24,000</td><td>會堂／禮堂 1.5 日 + 管理清潔</td></tr>
+          <tr><td>物流與器材</td><td class="right">12,000</td><td>棋盤棋子、計時鐘、搬運</td></tr>
+          <tr><td>工作人員</td><td class="right">16,000</td><td>裁判、賽務、場務、攝影</td></tr>
+          <tr><td>獎項與比賽金</td><td class="right">18,000</td><td>獎金、獎盃、證書</td></tr>
+          <tr><td>宣傳</td><td class="right">10,000</td><td>社媒推廣、海報、報名系統</td></tr>
+          <tr><td>保險與行政</td><td class="right">6,000</td><td>公眾責任保險及行政雜費</td></tr>
+          <tr><td>餐飲與補給</td><td class="right">6,000</td><td>工作人員餐飲、飲用水</td></tr>
+          <tr><td>預備金</td><td class="right">8,000</td><td>突發費用</td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>總計</th>
+            <th class="right">100,000</th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p class="note">詳細拆分與時程請參考 README.md</p>
   </div>
 </body>
 </html>
